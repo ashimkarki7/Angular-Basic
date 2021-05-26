@@ -1,0 +1,33 @@
+<div class="container-register">
+  <h4>Sign Up</h4>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+    <div *ngIf="isError" class="alert alert-danger">
+      <span class="message-error">{{ errorMessage }}</span>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email" required  >
+      <div class="alert alert-danger mt-1 mb-1" role="alert"  *ngIf="submitted && registerForm.controls.email.errors && registerForm.controls.email.errors.required">
+        Email is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="password">
+      <div class="alert alert-danger mt-1 mb-1" role="alert"  *ngIf="submitted && registerForm.controls.password.errors">
+        <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+        <div *ngIf="registerForm.controls.password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+    </div>
+
+
+  <div class="row mt-2 pt-2">
+    <div class="col-xs-12 col-sm-6">
+  <button class="btn btn-primary">Register</button>
+    </div>
+        <div class="col-xs-12 col-sm-6">
+    <a routerLink="../login" class="btn  btn-primary  ml-sm-4 pl-sm-4 ml-lg-4 pl-lg-4 mr-2 pr-0">Cancel</a>
+        </div>
+  </div>
+    </form>
+</div>

@@ -1,0 +1,10 @@
+.page-not-found-card {
+  max-width: 100%;
+}
+.not-found-content{
+  text-align: center;
+margin-left: 45%}
+
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

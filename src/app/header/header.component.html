@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg  navbar-light bg-primary"  *ngIf="getItem('user')" >
+<!--  <a class="navbar-brand" (click)="snav.toggle()">Menu</a>-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  routerLink="/servers" [ngStyle]="{ 'color': 'white' }">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="/profile" routerLinkActive="active" [ngStyle]="{ 'color': 'white' }">Profile</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+  <button class="btn btn-outline-menu my-2 my-sm-0" type="submit" [ngStyle]="{ 'color': 'white', 'background-color': 'grey' }"  (click)="logOut()">  {{getItem('user')}} Logout</button>
+    </form>
+  </div>
+
+</nav>
